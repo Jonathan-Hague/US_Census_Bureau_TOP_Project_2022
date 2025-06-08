@@ -1,0 +1,52 @@
+---
+title: "MeeraEDA"
+author: "Meera Patel"
+date: "10/11/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+# Kids Count Data Center EDA
+
+# Import libraries
+```{r}
+library(tidyverse)
+library(dplyr)
+library(ggplot2)
+```
+
+# Read df for Families with related children that are below poverty by family type in Puerto Rico
+```{r}
+df <- read.csv("~/Documents/TOP/Code/Data/FamilesChildrenBelowPL.csv")
+df
+```
+
+```{r}
+
+df %>%
+  select(FamilyType, Year, Number) %>%
+  group_by(Number) -> df1
+head(df1)
+
+ggplot(data = df1, mapping = aes(x = Year, y = (Number))) +
+  geom_point(mapping = aes(color = FamilyType)) +
+  geom_smooth() +
+  ggtitle("Families with Children Below Poverty Line in PR by Family Type") +
+  xlab("Year") +
+  ylab("Population")
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
