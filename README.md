@@ -34,7 +34,7 @@ build resilience and fill a critical gap.
 VISION FOR SPRINT OUTCOMES – Through the creation and distribution of child- and youth-friendly tools
 and resources specifically designed for the unique culture, language, and resources in Puerto Rico, more
 children and youth in Puerto Rico could have access to new skills and resources to strengthen their
-responses to adversity.
+responses to adversity. The application is coded in Shiny and can be deployed in R or Python. The application can run from the code file app.R
 
 TARGET END USERS – Children and youth, parents, educators, community-based organizations, and other
 service providers in Puerto Rico.
